@@ -165,8 +165,10 @@ func main() {
 			responseFile = r.URL.Path[idx:]
 		}
 
+		// TODO(aje): send a consul favicon if in consul mode
 		if idx := strings.Index(r.URL.Path, "favicon.png"); idx != -1 {
 			responseFile = "/favicon.png"
+			responseFile = "/favicon-consul.png"
 		}
 
 		if idx := strings.Index(r.URL.Path, "config.js"); idx != -1 {
